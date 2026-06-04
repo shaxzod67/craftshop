@@ -86,7 +86,7 @@ export default function App() {
               <Route path="/products/:id" element={<ProductDetail />} />
               <Route path="/shop/:sellerId" element={<ShopPage />} />
               <Route path="/cart" element={
-                <ProtectedRoute role="buyer"><Cart /></ProtectedRoute>
+                <ProtectedRoute ><Cart /></ProtectedRoute>
               } />
               <Route path="/checkout" element={
                 <ProtectedRoute role="buyer"><Checkout /></ProtectedRoute>
