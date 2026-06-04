@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --craft-primary: #8B4513;
+  --craft-secondary: #a0522d;
+  --craft-accent: #d2691e;
+  --craft-light: #faf8f5;
+  --craft-warm: #f5f0e8;
+  --craft-border: #e8e0d5;
+  --craft-text: #2c2c2c;
+  --craft-muted: #7a7a7a;
+  --craft-gold: #c8a450;
+}
+
+body {
+  font-family: 'Segoe UI', 'Inter', -apple-system, sans-serif;
+  background-color: var(--craft-light);
+  color: var(--craft-text);
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1ede8; }
+::-webkit-scrollbar-thumb { background: #c4a882; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #8B4513; }
+
+/* Ant Design overrides */
+.ant-btn-primary {
+  background: var(--craft-primary) !important;
+  border-color: var(--craft-primary) !important;
+}
+.ant-btn-primary:hover {
+  background: var(--craft-secondary) !important;
+  border-color: var(--craft-secondary) !important;
+}
+
+.craft-card {
+  border-radius: 12px;
+  border: 1px solid var(--craft-border);
+  background: #fff;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.craft-card:hover {
+  box-shadow: 0 4px 20px rgba(139,69,19,0.12);
+  transform: translateY(-2px);
+}
+
+/* Product card */
+.product-card-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Seller sidebar */
+.seller-sider .ant-layout-sider-children {
+  background: linear-gradient(180deg, #2c1810 0%, #3d2416 100%);
+}
+
+/* Loading screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--craft-light);
+  gap: 16px;
+}
+
+/* Stats card */
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--craft-border);
+  transition: box-shadow 0.2s;
+}
+.stat-card:hover {
+  box-shadow: 0 4px 16px rgba(139,69,19,0.1);
+}
+
+/* Auth pages */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #faf8f5 0%, #f0e8dd 50%, #e8d9c8 100%);
+}
+
+.auth-card {
+  background: white;
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(139,69,19,0.15);
+  width: 100%;
+  max-width: 440px;
+}
+
+/* Category tags */
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--craft-warm);
+  border: 1px solid var(--craft-border);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+.category-tag:hover, .category-tag.active {
+  background: var(--craft-primary);
+  color: white;
+  border-color: var(--craft-primary);
+}
+
+/* Hero banner */
+.hero-banner {
+  background: linear-gradient(135deg, #2c1810 0%, #5c2e14 40%, #8B4513 100%);
+  border-radius: 16px;
+  color: white;
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+
+/* Status badges */
+.status-pending { background: #fff7e6; color: #d48806; border: 1px solid #ffd591; }
+.status-confirmed { background: #e6f7ff; color: #1677ff; border: 1px solid #91caff; }
+.status-shipped { background: #f0f5ff; color: #2f54eb; border: 1px solid #adc6ff; }
+.status-delivered { background: #f6ffed; color: #389e0d; border: 1px solid #b7eb8f; }
+.status-cancelled { background: #fff2f0; color: #cf1322; border: 1px solid #ffa39e; }
+
+/* Wishlist heart */
+.wishlist-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s;
+  border: none;
+}
+.wishlist-btn:hover { transform: scale(1.1); }
+.wishlist-btn.active svg { fill: #ff4d4f; color: #ff4d4f; }
+
+@media (max-width: 768px) {
+  .auth-card { padding: 32px 24px; margin: 16px; }
+  .hero-banner { padding: 32px 24px; }
+}
